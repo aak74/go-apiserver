@@ -1,0 +1,55 @@
+###
+POST http://127.0.0.1:8080/post HTTP/1.1
+content-type: application/json
+
+{
+    "Content1": "sample123",
+    "content": "sample12345"
+}
+
+###
+GET http://127.0.0.1:8080/get HTTP/1.1
+
+### Hello
+GET http://127.0.0.1:8080/hello HTTP/1.1
+
+### User create
+POST http://127.0.0.1:8080/users HTTP/1.1
+content-type: application/json
+
+{
+    "email": "email2@example.org",
+    "password": "password"
+}
+
+### Sessions valid
+POST http://127.0.0.1:8080/sessions HTTP/1.1
+content-type: application/json
+
+{
+    "email": "email2@example.org",
+    "password": "password"
+}
+
+### Sessions invalid password
+POST http://127.0.0.1:8080/sessions HTTP/1.1
+content-type: application/json
+
+{
+    "email": "email2@example.org",
+    "password": "wrong password"
+}
+
+
+### Sessions invalid email
+POST http://127.0.0.1:8080/sessions HTTP/1.1
+content-type: application/json
+
+{
+    "email": "email123@example.org",
+    "password": "password"
+}
+
+### 
+GET http://127.0.0.1:8080/private/whoami HTTP/1.1
+Origin: google.com
